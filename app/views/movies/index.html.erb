@@ -1,0 +1,80 @@
+<head>
+  <meta charset="utf-8">
+  <title>ResourcePractice</title>
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+  <style>
+    /* Only necessary if you are using navbar-fixed-top */
+    body {
+      padding-top: 50px;
+    }
+  </style>
+
+  <link href="/assets/application-933259d6df80d47b0b16c28abf326b5e.css" media="all" rel="stylesheet" />
+  <script src="/assets/application-40d525f9b95f1e8c8b65d24a279ca32d.js"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="+A2YspsMYAryx0ookwwRhiy+C1VVrFwdN+aOTRNnhWE=" name="csrf-token" />
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">MovieDB</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/directors">Directors</a></li>
+        <li><a href="/movies">Movies</a></li>
+        <li><a href="/roles">Roles</a></li>
+        <li><a href="/actors">Actors</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+
+  <div class="container">
+
+
+    <div class="page-header">
+  <h1>Movies</h1>
+</div>
+
+<p><a href="/movies/new_form" class="btn btn-primary">Add a New Movie</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Director ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+<tbody>
+  <tr>
+       <td><img src="<%= movie.image_url %>" width="80"></td>
+       <td><%= movie.title %></td>
+       <td><%= movie.year %></td>
+       <td><%= movie.duration %></td>
+       <td><%= movie.description %></td>
+  </tr>
+</tbody>
