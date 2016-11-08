@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ResourcePractice</title>
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+  <style>
+    /* Only necessary if you are using navbar-fixed-top */
+    body {
+      padding-top: 50px;
+    }
+  </style>
+
+  <link href="/assets/application-933259d6df80d47b0b16c28abf326b5e.css" media="all" rel="stylesheet" />
+  <script src="/assets/application-40d525f9b95f1e8c8b65d24a279ca32d.js"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="4J+tarGmw72it1U7BdGUdvaZl4Agtf8qK5XwtkcnTqs=" name="csrf-token" />
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">MovieDB</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/directors">Directors</a></li>
+        <li><a href="/movies">Movies</a></li>
+        <li><a href="/roles">Roles</a></li>
+        <li><a href="/actors">Actors</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+
+  <div class="container">
+
+
+    <div class="page-header">
+  <h1>Add Movie</h1>
+</div>
+
+<form action="/create_movie" class="form-horizontal">
+  <!-- Label and input for title -->
+  <div class="form-group">
+    <label for="title" class="col-sm-2 control-label">
+      Title
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="">
+    </div>
+  </div>
+
+  <!-- Label and input for year -->
+  <div class="form-group">
+    <label for="year" class="col-sm-2 control-label">
+      Year
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="year" name="year" placeholder="Year" class="form-control" value="">
+    </div>
+  </div>
+
+  <!-- Label and input for duration -->
+  <div class="form-group">
+    <label for="duration" class="col-sm-2 control-label">
+      Duration
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="duration" name="duration" placeholder="Duration" class="form-control" value="">
+    </div>
+  </div>
+
+  <!-- Label and input for description -->
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">
+      Description
+    </label>
+    <div class="col-sm-10">
+      <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"></textarea>
+    </div>
+  </div>
+
+  <!-- Label and input for image_url -->
+  <div class="form-group">
+    <label for="image_url" class="col-sm-2 control-label">
+      Image url
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="">
+    </div>
+  </div>
+
+  <!-- Label and input for director_id -->
+  <div class="form-group">
+    <label for="director_id" class="col-sm-2 control-label">
+      Director
+    </label>
+    <div class="col-sm-10">
+        <%= select_tag(:director_id, options_from_collection_for_select(Director.all, :id, :name), :class => "form-control") %>
+    </div>  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+       <input type="submit" value="Create Movie" class="btn btn-primary">
+         </div>
+       </div>
+     </form>
+
+     </div>
+   </body>
+ </html>
